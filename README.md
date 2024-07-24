@@ -1,11 +1,10 @@
-[Gist Público en constante actualización](https://gist.github.com/SunsetSamu/fb16c8198be317f37914d525c6fddd47)
+[Gist Público en constante actualización](https://gist.github.com/SunsetSamu/c09414307f8afd5c862fba168da4a75c)
 
 # DGPP: Dopamine Generator Progression Plugin
 
-Disclaimer: Por defecto, este plugin puede resultar molesto e irritante para personas con sensibilidad auditiva, personas asustadizas, y personas en estado de irritabilidad. Para la accesibilidad de todos he incluido opciones de deshabilitado para varias de estas funciones, de modo que pueda seguir disfrutando de ganar EXP como mini motivante. 
+Disclaimer: Por defecto, este plugin puede resultar molesto e irritante para personas con sensibilidad auditiva, personas asustadizas, y personas en estado de irritabilidad. Para la accesibilidad de todos he incluido opciones de deshabilitado para varias de estas funciones, de modo que cualquiera pueda seguir disfrutando de ganar EXP como mini motivante. 
 
-Plugin experimental creado por SunsetSamu
-
+*Plugin experimental creado por [SunsetSamu](https://x.com/SunsetSamu)*
 ## Overview 
 
 En una lluvia de ideas para mejorar mi hábito de dibujo diario caí en cuenta en que podría crear un plugin con python para ayudarme en el programa de manera directa, tras algunas ideas inadecuadas pensé sobre la adictiva necesidad de subir niveles en juegos competitivos.
@@ -33,13 +32,14 @@ La progresión de este plugin es fácilmente engañable, le recuerdo que el obje
  
  - 🔥 **Sistema de rachas por días** similar a Duolingo (basado en, basado en el "unix time" con plazo de hasta 26 horas). Los días acumulados no tienen efectos en la puntuación por EXP.
 
+- (==Pedido==) 🏆 **Trofeos:** autoexplicativo.
+
 - (==Tentativo==) 🌐 **Progreso competitivo mundial!** podrá ver su posición en una tabla mundial mediante un sistema de webhooks y aplicaciones de Discord. Se permitirá habilitar esta opción y se pedirá un username que no necesariamente debe ser del Discord (a menos que se quiera ingresar al mismo y obtener los rangos personalizados por nivel), las puntuaciones y experiencia serán subidas constantemente al servidor en donde se irán rankeando cada hora. Así mismo cada hora se el plugin cliente descarga este ranking y se actualiza el apartado del docker. Se debe pensar también en un método para banear usuarios que se detecten como tramposos.
    ==Respecto al pedido de los retos personales==, integrar esa función en este modo competitivo puede llegar a ser considerado una trampa, por lo que tenemos dos opciones; 
    1. Que esos puntos solo cuenten en un modo offline.
    2. Establecer un contador de retos personales sin utilidad para el ranking 
 
-	- (==Pedido==) 📡 **Retos semanales integrados** por medio de algún tipo de notificación + recompensa en EXP. Pueden estar conectados desde el Discord y ser organizados de manera manual para evitar abusos. 
-
+	- (==Pedido==) 📡 **Retos semanales integrados** por medio de algún tipo de notificación + recompensa en EXP. Pueden estar conectados desde el Discord y las recompenzas pueden ser gestionadas de manera manual para evitar abusos (esto pensando en que se tendrá una cantidad moderada de usuarios).
 
 ## Experience Values
 
@@ -98,19 +98,12 @@ Aquí están algunos niveles y su experiencia requerida:
 def exp_requerida(nivel, k=12):
 
     """
-
     Calcula la experiencia requerida para alcanzar un nivel dado.
-
     Args:
-
     nivel (int): El nivel para el cual se quiere calcular la experiencia.
-
     k (float): El factor de ajuste de la fórmula. Por defecto es 12.
-
     Returns:
-
     float: La experiencia requerida para alcanzar el nivel dado.
-
     """
 
     return k * nivel**2
@@ -119,25 +112,17 @@ def exp_requerida(nivel, k=12):
 def mostrar_exp_para_niveles(max_nivel, k=12):
 
     """
-
     Muestra la experiencia requerida para alcanzar niveles desde 1 hasta max_nivel.
-
     Args:
-
     max_nivel (int): El nivel máximo para el cual se quiere mostrar la experiencia.
-
     k (float): El factor de ajuste de la fórmula. Por defecto es 12.
-
     """
 
     for nivel in range(1, max_nivel + 1):
-
         exp = exp_requerida(nivel, k)
-
         print(f"Nivel {nivel}: {exp} EXP")
 
 # Ejemplo de uso
-
 mostrar_exp_para_niveles(700)  # Muestra la experiencia requerida para los niveles del 1 al 700
 
 ```
