@@ -1,7 +1,3 @@
----
-tags:
-  - Python
----
 # DGPP: Dopamine Generator Progression Plugin
 
 Disclaimer: Por defecto, este plugin puede resultar molesto e irritante para personas con sensibilidad auditiva, personas asustadizas, y personas en estado de irritabilidad. Para la accesibilidad de todos he incluido opciones de deshabilitado para varias de estas funciones, de modo que pueda seguir disfrutando de ganar EXP como mini motivante. 
